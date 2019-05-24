@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+
+int Sort(int aSize, int arr[]);
+
+
+
+int main () 
+{
+	int aSize;
+	int i;
+	int j;
+	int temp;
+	
+	cout << "\nSelection Sorting..."<< endl;
+    cout <<"Enter array size: ";
+	cin >> aSize;
+	
+	int arr[aSize], arr1[aSize];
+	
+	cout <<"Enter the " << aSize  << " elements: "<< endl;
+	for(i=0; i<aSize; i++) 
+	{
+		cin >> arr[i];
+	}
+	
+	cout << "Your data: ";
+	for(i=0; i<aSize; i++) 
+	{
+		cout << "   " << arr[i];
+	}
+	
+	Sort(aSize, arr);
+	
+	cout <<"\nSorted Data: "<< endl;
+	for(i=0; i<aSize; i++) {
+		cout << "   " << arr[i];
+	}
+
+}
+
+int Sort(int aSize, int arr[]) 
+{
+
+	int i, j, temp;
+	
+	for(j=0; j<aSize; j++)
+	{
+		for(i=0; i<aSize-1; i++)
+		{
+			if (arr[i] > arr[i+1]) 
+			{
+				temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
+			}
+		}
+	}
+	
+}
